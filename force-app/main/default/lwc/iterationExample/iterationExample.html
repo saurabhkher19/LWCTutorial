@@ -1,0 +1,20 @@
+<template>
+  <lightning-card title="For Earch Example" icon-name="custom:custom10">
+    <ul class="slds-m-around_medium">
+      <template for:each={contacts} for:item="contact">
+        <li key={contact.Id}>{contact.Name} - {contact.Email}</li>
+      </template>
+    </ul>
+  </lightning-card>
+  <lightning-card title="Iterator Example" icon-name="custom:custom11">
+    <ul class="slds-m-around_medium">
+      <template iterator:it={contact}>
+        <li key={it.value.Id}>
+          <div if:true={it.first} class="list-first"></div>
+          {it.value.Name} - {it.value.Email}
+          <div if:true={it.last} class="list-first"></div>
+        </li>
+      </template>
+    </ul>
+  </lightning-card>
+</template>
