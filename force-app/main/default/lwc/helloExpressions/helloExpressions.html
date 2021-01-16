@@ -1,6 +1,6 @@
 <template>
   <div class="slds-m-around_medium">
-    <lightning-card title="Enter Details">
+    <lightning-card title="Enter Details" icon-name="custom:custom14">
       <lightning-input
         name="firstName"
         label="First Name"
@@ -12,6 +12,20 @@
         onchange={handleChange}
       ></lightning-input>
     </lightning-card>
-    <p class="slds-m-top_medium">Uppercased Full Name : {upperCasedFullName}</p>
+    <div class="slds-m-around_small">
+      <div class="slds-m-around_small">
+        <lightning-input
+          name="showDetails"
+          type="checkbox"
+          label="Show Details"
+          onchange={handleShowDetails}
+        ></lightning-input>
+      </div>
+      <template if:true={showData}>
+        <p class="slds-m-vertical_medium">
+          Uppercased Full Name : {upperCasedFullName}
+        </p>
+      </template>
+    </div>
   </div>
 </template>
