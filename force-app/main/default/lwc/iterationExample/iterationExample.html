@@ -8,7 +8,7 @@
   </lightning-card>
   <lightning-card title="Iterator Example" icon-name="custom:custom11">
     <ul class="slds-m-around_medium">
-      <template iterator:it={contact}>
+      <template iterator:it={contacts}>
         <li key={it.value.Id}>
           <div if:true={it.first} class="list-first"></div>
           {it.value.Name} - {it.value.Email}
